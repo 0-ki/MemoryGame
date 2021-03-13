@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -374,4 +374,86 @@
 
 </body>
 
+</html>
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Image Transform on Scroll</title>
+    <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  min-height: 5000px;
+}
+.banner {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+.banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.banner #bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff
+    url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/XEIcon_xi-heart.svg/512px-XEIcon_xi-heart.svg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100px;
+  mix-blend-mode: screen;
+}
+
+
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <body>
+    <body>
+        <div class="banner">
+          
+          <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcFDIOx%2FbtqZZU1GdOj%2FLoSESOhdPDloQ3adl4EKK1%2Fimg.jpg" class="pic-image" alt="Pic">
+    <div style="
+        position: absolute;
+        z-index: 1000;
+        left: 43%;
+        top: 28%;
+        font-size: 50px;
+        color: #ff6347d9;
+        -webkit-writing-mode: vertical-rl;
+    ">내시키♡</div>
+                    
+        <div id="bg" style="background-size: 100px; z-index: 99999;">
+    </div>
+        <script type="text/javascript">
+          let bg = document.querySelector('#bg');
+          window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            if(value < 500){
+                bg.style.backgroundSize = 100 + value * 2 + 'px';
+            }
+            if(value > 500){
+                bg.style.backgroundSize = 1100 -value*0.3 + 'px';
+            }
+          });
+        </script>
+    
+        <!-- inspired by Online Tutorials on Youtube -->
+      
+    
+    </div></body>
+  </body>
 </html>
